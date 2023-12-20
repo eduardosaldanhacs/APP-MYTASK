@@ -1,22 +1,17 @@
 <?php
     require_once("templates/header.php");
+    require_once("templates/footer.php");
     require_once("globals.php");
     require_once("db.php");
     require_once("dao/TarefaDAO.php");
 
 
     $tarefaDao = new TarefaDAO($conn, $BASE_URL);
-    $listaTarefas = $tarefaDao->recuperarTarefa();
+    $listaTarefas = $tarefaDao->recuperarTarefaNaoConcluida();
 ?>
-
-<body>
-    <div class="container-titulo">
-        <div>
-            <h2>App Lista Tarefas</h2>
-        </div>
-    </div> 
-    <div class="container">      
+     <div class="container">   
         <div class="container-opcoes">
+            <h2>App Lista Tarefas</h2>
             <ul>
                 <li><a href="index.php">Tarefas pendentes</a></li>
                 <li><a href="adicionar_tarefa.php">Nova tarefa</a></li>
@@ -43,5 +38,3 @@
         </div>
 
     </div>
-</body>
-</html>

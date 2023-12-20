@@ -7,8 +7,7 @@
 }
 
 body {
-    width: 100%;
-    height: 1000px;
+    height: 100vh;
 }
 
 
@@ -40,9 +39,12 @@ body {
 
 .container {
     margin: 0 auto;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
     width: 85%;   
+    height: 75%;
+    margin-top: 1em;
 }
 
 .container-conteudo-titulo {
@@ -83,10 +85,15 @@ body {
 }
 
 .container-opcoes {
-    width: 22%;
+    width: 25%;
     height: 30%;
     display: flex;
     align-items: center;
+    flex-direction: column;
+}
+
+.container-opcoes h2 {
+    margin-bottom: 1em;
 }
 
 .container-opcoes ul {
@@ -145,20 +152,20 @@ body {
 
 #body-todas-tarefas {
     background-color:rgb(80, 80, 80);
+    height: 80%;
 }
 
 .container-todas-tarefas {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 20px;
     border: 1px solid rgb(167, 167, 167);
     background-color: white;
     justify-content: center;
     text-align: justify;
     width: 30%;
     padding: 24px;
-    max-height: 100%;
+    height: 100%;
     box-shadow: 1px 3px 5px black;
     border-radius: 5px;
 }
@@ -172,7 +179,7 @@ body {
 }
 
 .container-todas-tarefas div {
-    padding: 5px;
+    padding: 3px;
     border-bottom: 1px solid rgb(167, 167, 167);
 }
 
@@ -181,12 +188,14 @@ body {
     display: flex;
 }
 
-#tarefa-pendente {
+#tarefa-pendente,
+#Pendente {
     margin-left: 2px;
     color: red;
     text-transform: uppercase;
 }
-#tarefa-concluida {
+#tarefa-concluida,
+#Concluido {
     margin-left: 2px;
     color: green;
     text-transform: uppercase;
@@ -259,4 +268,98 @@ body {
     background-color: white;
     color: black;
     padding: 9px;
+}
+/* edit.php */
+.edit-main {
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.edit-main label,
+.edit-main input,
+.edit-main p {
+    margin: 0.2em 0;
+    padding: 0.2em;
+}
+
+.edit-main #button {
+    background-color: aqua;
+    color: white;
+    border: none;
+    border-radius: 20px 20px;
+    font-size: 1.3em;
+    margin-top: 0.6em;
+    cursor: pointer;
+}
+
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 25%;
+    height: 80%;
+    border-radius: 10px 10px;
+}
+
+.sections-container h2 {
+    padding: 0.5em;
+}
+
+.first-section,
+.second-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 0.5em;
+    width: 80%;
+}
+
+.first-section {
+    height: 30%;
+}
+
+.second-section {
+    margin-top: 1em;
+    height: 50%;
+}
+
+.second-section h4 {
+    text-align: center;
+}
+
+.second-section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2em;
+    width: 100%;
+}
+
+.second-section form input,
+.second-section form select {
+    width: 80%;
+}
+
+footer {
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+footer span {
+    color: white;
 }

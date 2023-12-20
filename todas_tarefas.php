@@ -1,11 +1,13 @@
 <?php
 
     require_once("templates/header.php");
+    require_once("templates/footer.php");
+
     $tarefaDao = new TarefaDAO($conn, $BASE_URL);
     $listaTarefas = $tarefaDao->recuperarTodasTarefa();
 
 ?>
-<body id="body-todas-tarefas">
+<div id="body-todas-tarefas">
 
     <div class="container-todas-tarefas">
         <h3 id="container-todas-tarefas-titulo">Todas as tarefas</h3>
@@ -22,5 +24,4 @@
             </div>
         <?php endforeach; ?>
     </div>
-</body>
-</html>
+</div>

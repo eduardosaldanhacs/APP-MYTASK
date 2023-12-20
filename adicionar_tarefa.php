@@ -1,6 +1,6 @@
 <?php
     require_once("templates/header.php");
-
+    require_once("templates/footer.php");
 ?>
 
     <div class="container-nova-tarefa">
@@ -15,5 +15,3 @@
             </div>
         </form>
     </div>
-
-</html>
