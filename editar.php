@@ -1,6 +1,6 @@
 <?php
     require_once("templates/header.php");
-    require_once("templates/footer.php");
+    $id = '';
     $id = $_GET['id'];
     $tarefaDAO = new TarefaDAO($conn, $BASE_URL);
     $tarefaOBJ = new Tarefa();
@@ -33,4 +33,7 @@
             </section>
         </div>
     </main>
-
+    
+    <?php
+    require_once("templates/footer.php");
+    ?>

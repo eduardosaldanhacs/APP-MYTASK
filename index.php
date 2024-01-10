@@ -1,17 +1,17 @@
 <?php
+
     require_once("templates/header.php");
-    require_once("templates/footer.php");
     require_once("globals.php");
     require_once("db.php");
     require_once("dao/TarefaDAO.php");
 
-
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     $tarefaDao = new TarefaDAO($conn, $BASE_URL);
     $listaTarefas = $tarefaDao->recuperarTarefaNaoConcluida();
 ?>
      <div class="container">   
         <div class="container-opcoes">
-            <h2>App Lista Tarefas</h2>
             <ul>
                 <li><a href="index.php">Tarefas pendentes</a></li>
                 <li><a href="adicionar_tarefa.php">Nova tarefa</a></li>
@@ -30,7 +30,7 @@
                     <div>
                         <button type="submit" name="concluido" id="botao-concluir">Concluir</button>
                         <button type="submit" name="excluir" id="botao-excluir">Excluir</button>
-                        <a href="editar.php/<?= $tarefa['id'] ?>"><button type="submit" name="editar" id="botao-editar">Editar</button></a>
+                        <button type="submit" name="editar" id="botao-editar">Editar</button></a>
                     </div>
                 </form>
             </div>
@@ -38,3 +38,6 @@
         </div>
 
     </div>
+    <?php
+    require_once("templates/footer.php");
+    ?>

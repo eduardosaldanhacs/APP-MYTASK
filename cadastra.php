@@ -19,7 +19,7 @@
         } elseif (isset($_POST['excluir'])) {
             $tarefaDao->removerTarefa($id);
         } elseif (isset($_POST['editar'])) {
-            header("Location: " . $BASE_URL . "editar.php?id=" . $id);
+            header("Location: editar.php?id=" . $id);
         }  
     }
 
@@ -38,7 +38,7 @@
             $tarefaObjeto->id_status = $id_status;
             
             $tarefaDao->criar($tarefaObjeto);
-            header("Location: " . $BASE_URL . "adicionar_tarefa.php");
+            header("Location: adicionar_tarefa.php");
         }
     /* Lógica para o script editar.php */
     } else if($type == "editar") {

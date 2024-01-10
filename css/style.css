@@ -2,19 +2,43 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 
 }
 
 body {
     height: 100vh;
+    background-color: rgb(236, 236, 236);
 }
 
 
 .cabecalho {
     height: 10%;
-    background-color: black;
+    background-color: rgb(158, 158, 158);
 }
+
+.cabecalho-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.cabecalho-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecalho-title h1 {
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+
 
 .cabecalho-nav {
     display: flex;
@@ -82,11 +106,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    overflow-y: scroll;
 }
 
 .container-opcoes {
-    width: 25%;
-    height: 30%;
+    width: 250px;
+    height: 150px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -98,10 +123,12 @@ body {
 
 .container-opcoes ul {
     display: flex;
+    background-color: rgb(61, 61, 61);
     align-items: baseline;
     flex-direction: column;
     list-style-type: none;
     width: 100%;
+    box-shadow: 5px 5px 10px black;
 }
 
 .container-opcoes ul li {
@@ -112,16 +139,24 @@ body {
 }
 
 .container-opcoes ul li a {
-    color: black;
+    color: rgb(255, 165, 31);
     font-size: 1.0em;
     text-decoration: none;
+    font-weight: bold;
+}
+
+.container-opcoes ul li a:hover {
+    color: rgb(202, 131, 25);
 }
 
 .container-buttons {
     display: flex;
-    padding: 10px;
+    padding: 5px 10px;
+    margin-top: 10px;
     align-items: center;
     justify-content: space-between;
+    border-radius: 5px;
+    background-color: rgb(207, 207, 207);
 }
 
 .container-buttons ul {
@@ -138,36 +173,51 @@ body {
     width: 80px;
     color: white;
     border: none;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 #botao-excluir {
     background-color: red;
 }
+#botao-excluir:hover {
+    background-color: rgb(173, 1, 1);
+}
+
 #botao-concluir {
     background-color: green;
 }
+
+#botao-concluir:hover {
+    background-color: rgb(0, 83, 0);
+}
+
 #botao-editar {
     background-color: grey;
 }
 
+#botao-editar:hover {
+    background-color: rgb(85, 85, 85);
+}
+
 #body-todas-tarefas {
-    background-color:rgb(80, 80, 80);
-    height: 80%;
+    height: 80vh;
 }
 
 .container-todas-tarefas {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 10px auto;
     border: 1px solid rgb(167, 167, 167);
     background-color: white;
     justify-content: center;
     text-align: justify;
     width: 30%;
     padding: 24px;
-    height: 100%;
+    height: 95%;
     box-shadow: 1px 3px 5px black;
     border-radius: 5px;
+    overflow-y: scroll;
 }
 
 #container-todas-tarefas-titulo {
@@ -179,7 +229,8 @@ body {
 }
 
 .container-todas-tarefas div {
-    padding: 3px;
+    margin: 4px 0;
+    padding: 2px;
     border-bottom: 1px solid rgb(167, 167, 167);
 }
 
@@ -205,12 +256,11 @@ body {
     display: inline;
 }
 
+/*ADICIONAR NOVA TAREFA */
 .container-nova-tarefa {
-    min-height: 25%;
-    max-height: 100%;
+    height: 80vh;
     width: 40%;
     margin: 0 auto;
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -228,15 +278,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .container-nova-tarefa-preencher label {
     font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 .container-nova-tarefa-preencher input {
     height: 30px;
-    margin-left: 3px;
     font-size: 1em;
 }
 
@@ -250,24 +301,21 @@ body {
 
 
 .container-botao-nova-tarefa input {
-    padding: 10px;
+    padding: 12px 24px;
     margin-top: 5px;
     border: none;
     border-radius: 10px;
-    width: 50%;
+    width: 80%;
     background-color: black;
-    color: yellow;
+    color: rgb(255, 165, 31);
     text-transform: uppercase;
     font-size: 1.2em;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 .container-botao-nova-tarefa input:hover {
-
-    border: 1px solid black;
-    background-color: white;
-    color: black;
-    padding: 9px;
+    color: rgb(202, 131, 25);
 }
 /* edit.php */
 .edit-main {
@@ -355,11 +403,16 @@ footer {
     bottom: 0;
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items: end;
     justify-content: center;
-    background-color: black;
+    background-color: rgb(158, 158, 158);
 }
 
 footer span {
-    color: white;
+    margin-bottom: 5px;
+}
+
+footer span a {
+    color: rgb(196, 196, 196);
+    text-decoration: none;
 }
