@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: 'Roboto';
 
 }
 
@@ -30,12 +30,16 @@ body {
     justify-content: center;
 }
 
-.cabecalho-title h1 {
+.cabecalho-title h1  {
     color: white;
     text-decoration: none;
     font-size: 2em;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3px;    
+}
+
+.cabecalho-title a {
+    text-decoration: none;
 }
 
 
@@ -72,13 +76,14 @@ body {
 }
 
 .container-conteudo-titulo {
-    border-bottom: 1px solid grey;
+    /* border-bottom: 1px solid grey; */
+    text-align: center;
     margin-bottom: 3px;
     padding: 5px 5px 10px 5px;
 }
 
 .container-conteudo-titulo h2 {
-    color: green;
+    /* color: green; */
 }
 
 .container-titulo {
@@ -102,15 +107,14 @@ body {
 .container-conteudo {
     width: 70%;
     padding: 20px;
-    border: 1px solid grey;
+    box-shadow: 5px 5px 10px #b1b1b1;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .container-opcoes {
-    width: 250px;
+    width: 20%;
     height: 150px;
     display: flex;
     align-items: center;
@@ -128,7 +132,7 @@ body {
     flex-direction: column;
     list-style-type: none;
     width: 100%;
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 5px 5px 10px #b1b1b1;
 }
 
 .container-opcoes ul li {
@@ -177,6 +181,13 @@ body {
     cursor: pointer;
 }
 
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
 #botao-excluir {
     background-color: red;
 }
@@ -208,16 +219,12 @@ body {
     display: flex;
     flex-direction: column;
     margin: 10px auto;
-    border: 1px solid rgb(167, 167, 167);
-    background-color: white;
-    justify-content: center;
     text-align: justify;
-    width: 30%;
-    padding: 24px;
-    height: 95%;
-    box-shadow: 1px 3px 5px black;
+    width: 60%;
+    padding: 12px;
+    box-shadow: 5px 5px 10px #b1b1b1;
     border-radius: 5px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #container-todas-tarefas-titulo {
@@ -258,22 +265,18 @@ body {
 
 /*ADICIONAR NOVA TAREFA */
 .container-nova-tarefa {
-    height: 80vh;
-    width: 40%;
+    height: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    box-shadow: 5px 5px 10px #b1b1b1;
 }
 
 .container-nova-tarefa form {
-    border: 1px solid rgb(102, 102, 102);
     padding: 32px;
 }
 
 .container-nova-tarefa-preencher {
-    border-bottom: 1px solid black;
     padding: 24px;
     display: flex;
     align-items: center;
@@ -283,7 +286,8 @@ body {
 
 .container-nova-tarefa-preencher label {
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .container-nova-tarefa-preencher input {

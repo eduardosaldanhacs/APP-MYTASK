@@ -27,7 +27,7 @@ class TarefaDAO implements TarefaDaoInterface {
     //Método para criar um objeto tarefa
     public function criar(Tarefa $tarefa) {
        
-        $stmt = $this->conn->prepare("INSERT INTO tb_tarefas(tarefa) VALUES (:tarefa)");
+        $stmt = $this->conn->prepare("INSERT INTO tarefas(tarefa) VALUES (:tarefa)");
 
             
             $stmt->bindParam(":tarefa", $tarefa->tarefa);
@@ -38,7 +38,7 @@ class TarefaDAO implements TarefaDaoInterface {
     //Método para atualizar um objeto tarefa
     public function atualizar($tarefa, $id_status, $id)
     {
-        $stmt = $this->conn->prepare("UPDATE tb_tarefas SET id_status = :id_status, tarefa = :tarefa WHERE id = $id");
+        $stmt = $this->conn->prepare("UPDATE tarefas SET id_status = :id_status, tarefa = :tarefa WHERE id = $id");
         $stmt->bindParam(":tarefa", $tarefa);
         $stmt->bindParam(":id_status", $id_status);
 
@@ -48,7 +48,7 @@ class TarefaDAO implements TarefaDaoInterface {
     public function recuperarTarefaNaoConcluida() {
         $tarefas = [];
 
-        $stmt = $this->conn->prepare("SELECT * FROM tb_tarefas WHERE id_status = 1");
+        $stmt = $this->conn->prepare("SELECT * FROM tarefas WHERE id_status = 1");
 
         $stmt->execute();
 
@@ -59,13 +59,13 @@ class TarefaDAO implements TarefaDaoInterface {
     }    
     //Método para remover uma tarefa
     public function removerTarefa($id) {
-        $stmt = $this->conn->prepare("DELETE FROM tb_tarefas WHERE id = $id");
+        $stmt = $this->conn->prepare("DELETE FROM tarefas WHERE id = $id");
 
         $stmt->execute();
     }
     //Método para concluir uma tarefa
     public function concluirTarefa($id) {
-        $stmt = $this->conn->prepare("UPDATE tb_tarefas SET id_status = 2 WHERE id = $id");
+        $stmt = $this->conn->prepare("UPDATE tarefas SET id_status = 2 WHERE id = $id");
 
         $stmt->execute();
     }
@@ -73,7 +73,7 @@ class TarefaDAO implements TarefaDaoInterface {
     public function recuperarTodasTarefa() {
         $tarefas = [];
 
-        $stmt = $this->conn->prepare("SELECT * FROM tb_tarefas WHERE id_status = 1 OR 2");
+        $stmt = $this->conn->prepare("SELECT * FROM tarefas WHERE id_status = 1 OR 2");
 
         $stmt->execute();
 
@@ -85,7 +85,7 @@ class TarefaDAO implements TarefaDaoInterface {
     //Método para encontrar o id de uma tarefa
     public function recuperarTarefaId($id)
     {
-        $stmt = $this->conn->prepare("SELECT * from tb_tarefas WHERE id = $id");
+        $stmt = $this->conn->prepare("SELECT * from tarefas WHERE id = $id");
         $stmt->execute();
         $tarefa = $stmt->fetch();
         return $tarefa;

@@ -1,0 +1,6 @@
+<!-- AddHandler php74-script .php
+suPHP_ConfigPath /home/lolchampionssite1/
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.mytask.com.br/$1 [R,L] -->

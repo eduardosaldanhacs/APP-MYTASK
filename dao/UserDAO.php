@@ -28,7 +28,7 @@
 
         public function create(User $user, $authUser = false) {
         
-            $stmt = $this->conn->prepare("INSERT INTO tb_pessoas(
+            $stmt = $this->conn->prepare("INSERT INTO usuarios(
                 nome, idade) VALUES (
                 :nome, :idade)");
 
@@ -40,7 +40,7 @@
         }
 
         public function criarTarefa(User $user) {
-            $stmt = $this->conn->prepare("UPDATE tb_pessoas SET tarefas");
+            $stmt = $this->conn->prepare("UPDATE usuarios SET tarefas");
 
             $stmt->bindParam(":tarefas", $user->tarefas);
             $stmt->execute();
