@@ -26,7 +26,7 @@ $status = $tarefaOBJ->situacaoStatus($tarefa['id_status']);
                 <option value=2>Concluido</option>
                 <option value=1>Pendente</option>
             </select>
-            <input type="submit" value="Atualizar" id="button" class="edit-button">
+            <input type="submit" value="Atualizar" id="button" class="edit-button2">
         </form>
     </section>
 </div>

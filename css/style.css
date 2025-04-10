@@ -173,15 +173,6 @@ body {
     list-style-type: none;
 }
 
-.container-buttons button {
-    margin-left: 5px;
-    padding: 5px;
-    width: 80px;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
 
 .content {
     display: flex;
@@ -189,30 +180,6 @@ body {
     width: 100%;
 }
 
-
-#botao-excluir {
-    background-color: red;
-}
-
-#botao-excluir:hover {
-    background-color: rgb(173, 1, 1);
-}
-
-#botao-concluir {
-    background-color: green;
-}
-
-#botao-concluir:hover {
-    background-color: rgb(0, 83, 0);
-}
-
-#botao-editar {
-    background-color: grey;
-}
-
-#botao-editar:hover {
-    background-color: rgb(85, 85, 85);
-}
 
 #body-todas-tarefas {
     height: 80vh;
@@ -309,7 +276,7 @@ body {
 
 
 .container-botao-nova-tarefa input,
-.edit-button {
+.edit-button2 {
     padding: 12px 24px;
     margin-top: 5px;
     border: none;
@@ -425,6 +392,34 @@ footer span a {
     text-decoration: none;
 }
 
+.finish-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: green;
+    font-size: 30px;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 30px;
+}
+
+.detele-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-size: 30px;
+}
+
+.container-buttons div form {
+    display: flex;
+}
+
 @media (max-width: 768px) {
     .cabecalho-content {
         height: 100%;
@@ -445,8 +440,49 @@ footer span a {
     .cabecalho-nav a {
         color: yellow;
     }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-opcoes,
+    .container-conteudo {
+        width: 100%;
+    }
+
+    .container-buttons div {
+        display: flex;
+        width: 50%;
+    }
+
+    .container-buttons div form {
+        display: flex;
+        width: 100%;
+    }
+
+    .finish-button,
+    .edit-button,
+    .detele-button {
+        font-size: 20px;
+        width: 33%;
+    }
+
+    .container-nova-tarefa {
+        margin-top: 20px;
+    }
+
+    .container-todas-tarefas {
+        width: 100%;
+    }
+
+    .sections-container {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .second-section {
+        width: 100%;
+    }
+    
 }
-
-
-
-  
