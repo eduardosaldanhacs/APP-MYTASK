@@ -26,11 +26,15 @@ class TarefaDAO implements TarefaDaoInterface {
     }
     //Método para criar um objeto tarefa
     public function criar(Tarefa $tarefa) {
-       
-        $stmt = $this->conn->prepare("INSERT INTO tarefas(tarefa) VALUES (:tarefa)");
+        $data_cadastrada = date('Y-m-d H:i:s');
+        $ativo = 'S';
+        $stmt = $this->conn->prepare("INSERT INTO tarefas(tarefa, id_status, data_cadastro, ativo) VALUES (:tarefa, :id_status, :data_cadastrada, :ativo)");
 
             
             $stmt->bindParam(":tarefa", $tarefa->tarefa);
+            $stmt->bindParam(":id_status", $tarefa->id_status);
+            $stmt->bindParam(":data_cadastrada", $data_cadastrada);
+            $stmt->bindParam(":ativo", $ativo);
 
             $stmt->execute();
         }
@@ -48,7 +52,7 @@ class TarefaDAO implements TarefaDaoInterface {
     public function recuperarTarefaNaoConcluida() {
         $tarefas = [];
 
-        $stmt = $this->conn->prepare("SELECT * FROM tarefas WHERE id_status = 1");
+        $stmt = $this->conn->prepare("SELECT * FROM tarefas WHERE id_status = 1 AND ativo = 'S'");
 
         $stmt->execute();
 
@@ -59,7 +63,9 @@ class TarefaDAO implements TarefaDaoInterface {
     }    
     //Método para remover uma tarefa
     public function removerTarefa($id) {
-        $stmt = $this->conn->prepare("DELETE FROM tarefas WHERE id = $id");
+        $status = "E";
+        $stmt = $this->conn->prepare("UPDATE tarefas SET ativo = :status WHERE id = $id");
+        $stmt->bindParam(":status", $status);
 
         $stmt->execute();
     }
@@ -73,8 +79,7 @@ class TarefaDAO implements TarefaDaoInterface {
     public function recuperarTodasTarefa() {
         $tarefas = [];
 
-        $stmt = $this->conn->prepare("SELECT * FROM tarefas WHERE id_status = 1 OR 2");
-
+        $stmt = $this->conn->prepare("SELECT * FROM tarefas WHERE id_status = 1 OR 2 AND ativo = 'S'");
         $stmt->execute();
 
 

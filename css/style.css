@@ -30,12 +30,12 @@ body {
     justify-content: center;
 }
 
-.cabecalho-title h1  {
+.cabecalho-title h1 {
     color: white;
     text-decoration: none;
     font-size: 2em;
     text-transform: uppercase;
-    letter-spacing: 3px;    
+    letter-spacing: 3px;
 }
 
 .cabecalho-title a {
@@ -55,8 +55,9 @@ body {
     display: flex;
     list-style-type: none;
     gap: 20px;
-    
+
 }
+
 .cabecalho-nav-lista-item a {
     color: white;
     text-decoration: none;
@@ -70,7 +71,7 @@ body {
     padding: 1em;
     display: flex;
     justify-content: space-between;
-    width: 85%;   
+    width: 85%;
     height: 75%;
     margin-top: 1em;
 }
@@ -171,6 +172,7 @@ body {
 .container-buttons li {
     list-style-type: none;
 }
+
 .container-buttons button {
     margin-left: 5px;
     padding: 5px;
@@ -191,6 +193,7 @@ body {
 #botao-excluir {
     background-color: red;
 }
+
 #botao-excluir:hover {
     background-color: rgb(173, 1, 1);
 }
@@ -252,6 +255,7 @@ body {
     color: red;
     text-transform: uppercase;
 }
+
 #tarefa-concluida,
 #Concluido {
     margin-left: 2px;
@@ -278,10 +282,7 @@ body {
 
 .container-nova-tarefa-preencher {
     padding: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
 }
 
 .container-nova-tarefa-preencher label {
@@ -291,8 +292,11 @@ body {
 }
 
 .container-nova-tarefa-preencher input {
-    height: 30px;
-    font-size: 1em;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .container-botao-nova-tarefa {
@@ -304,7 +308,8 @@ body {
 }
 
 
-.container-botao-nova-tarefa input {
+.container-botao-nova-tarefa input,
+.edit-button {
     padding: 12px 24px;
     margin-top: 5px;
     border: none;
@@ -321,6 +326,7 @@ body {
 .container-botao-nova-tarefa input:hover {
     color: rgb(202, 131, 25);
 }
+
 /* edit.php */
 .edit-main {
     background-color: rgb(63, 63, 63);
@@ -353,10 +359,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    width: 25%;
+    box-shadow: 5px 5px 10px #b1b1b1;
+    width: 70%;
     height: 80%;
-    border-radius: 10px 10px;
 }
 
 .sections-container h2 {
@@ -374,13 +379,8 @@ body {
     width: 80%;
 }
 
-.first-section {
-    height: 30%;
-}
-
 .second-section {
     margin-top: 1em;
-    height: 50%;
 }
 
 .second-section h4 {
@@ -399,6 +399,10 @@ body {
 .second-section form input,
 .second-section form select {
     width: 80%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
 }
 
 footer {
@@ -420,3 +424,29 @@ footer span a {
     color: rgb(196, 196, 196);
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+    .cabecalho-content {
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cabecalho-title a h1 {
+        font-size: 1.3em;
+    }
+
+    .cabecalho-nav {
+        margin-top: 10px;
+        font-size: 0.5em;
+        padding: 0;
+    }
+
+    .cabecalho-nav a {
+        color: yellow;
+    }
+}
+
+
+
+  

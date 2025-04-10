@@ -10,6 +10,7 @@ ini_set('display_errors', 1);
 $tarefaDao = new TarefaDAO($conn, $BASE_URL);
 $listaTarefas = $tarefaDao->recuperarTarefaNaoConcluida();
 ?>
+<div id="loader"></div>
 <div class="container">
     <div class="content">
         <div class="container-opcoes">
@@ -30,6 +31,9 @@ $listaTarefas = $tarefaDao->recuperarTarefaNaoConcluida();
             case 'new_task':
                 include('templates/new_task.php');
                 break;
+            case 'edit_task':
+                include('templates/edit_task.php');
+                break;
             default:
                 include('templates/list_pending_tasks.php');
                 break;
@@ -40,3 +44,9 @@ $listaTarefas = $tarefaDao->recuperarTarefaNaoConcluida();
 <?php
 require_once("templates/footer.php");
 ?>
+<script>
+  window.addEventListener("load", function() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("container").style.display = "block";
+  });
+</script>

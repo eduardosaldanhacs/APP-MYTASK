@@ -31,8 +31,7 @@ require_once("dao/TarefaDAO.php");
             </div>
             <nav class="cabecalho-nav">
                 <ul class="cabecalho-nav-lista">
-                    <li class="cabecalho-nav-lista-item"><a href="index.php">Inicio</a></li>
-                    <li class="cabecalho-nav-lista-item"><a href="https://eduardosaldanha.com.br" target="_blank">Contato</a></li>
+                    <li class="cabecalho-nav-lista-item"><a href="https://eduardosaldanha.online" target="_blank">Voltar ao portfólio</a></li>
                 </ul>
             </nav>
         </div>
